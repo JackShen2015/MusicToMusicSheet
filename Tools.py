@@ -1,6 +1,6 @@
 #! /usr/bin/python2.7
 # coding=utf8
-from pydub import AudioSegment
+# from pydub import AudioSegment
 import os
 import wave
 import numpy as np
@@ -9,16 +9,16 @@ import time
 
 
 # 如果源文件为MP3文件，则转换成wav文件
-def mp3ToWav(musicPath):
-    if musicPath == "" or musicPath == None:
-        return "错误！"
-    else:
-        AudioSegment.converter = "/usr/bin/ffmpeg"
-        sound = AudioSegment.from_mp3(musicPath)
-        path, filename = os.path.split(musicPath)
-        wavMusicPath = path + "/temp/" + filename.replace("mp3", "wav")
-        sound.export(wavMusicPath, format="wav")
-        return wavMusicPath
+# def mp3ToWav(musicPath):
+#     if musicPath == "" or musicPath == None:
+#         return "错误！"
+#     else:
+#         AudioSegment.converter = "/usr/bin/ffmpeg"
+#         sound = AudioSegment.from_mp3(musicPath)
+#         path, filename = os.path.split(musicPath)
+#         wavMusicPath = path + "/temp/" + filename.replace("mp3", "wav")
+#         sound.export(wavMusicPath, format="wav")
+#         return wavMusicPath
 
 
 # wav文件转成数组
