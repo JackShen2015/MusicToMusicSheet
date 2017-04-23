@@ -1,6 +1,4 @@
 #gitignore
 *.pyc
-*.so
 music/
-*.wav
 .idea/
