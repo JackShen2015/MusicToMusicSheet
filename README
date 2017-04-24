@@ -1,0 +1,3 @@
+#Before you run test.py,you should know:
+	1.this program developed with Python2.7,so it may hava some problems in Python3.x
+	2.compile the cpp file(I have written the makefile ,just run make to complete it)
