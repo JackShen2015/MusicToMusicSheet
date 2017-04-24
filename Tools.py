@@ -73,8 +73,8 @@ def getAllBasicHz(frames):
             n += 1
         allCutC.append(cframe)
     for i in range(0, len(allCutC)):
-        lib.cgetBasicHz.restype = ctypes.c_float
-        allBasicHz.append(lib.cgetBasicHz(allCutC[i], 1654))
+        lib.getBasicHz.restype = ctypes.c_float
+        allBasicHz.append(lib.getBasicHz(allCutC[i], 1654))
     return allBasicHz
 
 
