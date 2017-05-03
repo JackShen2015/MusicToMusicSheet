@@ -7,7 +7,7 @@ import numpy as np
 import ctypes
 import time
 
-
+N=6654
 # 如果源文件为MP3文件，则转换成wav文件
 # def mp3ToWav(musicPath):
 #     if musicPath == "" or musicPath == None:
@@ -47,7 +47,7 @@ def musicArrayCut(wave_date):
     for i in range(0, len(wave_date)):
         frame.append(wave_date[i])
         n += 1
-        if n == 1654:
+        if n == N:
             n = 0
             frames.append(frame)
             frame = []
@@ -66,15 +66,17 @@ def getAllBasicHz(frames):
     allBasicHz = []
     allCutC = []
     for frame in frames:
-        cframe = (ctypes.c_float * 1654)()
+        cframe = (ctypes.c_float * N)()
         n = 0
         for i in frame:
             cframe[n] = i
             n += 1
         allCutC.append(cframe)
+    print len(allCutC[0])
     for i in range(0, len(allCutC)):
         lib.getBasicHz.restype = ctypes.c_float
-        allBasicHz.append(lib.getBasicHz(allCutC[i], 1654))
+        allBasicHz.append(lib.getBasicHz(allCutC[i], N))
+        print allBasicHz[i]
     return allBasicHz
 
 
