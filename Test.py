@@ -1,17 +1,15 @@
+#! /usr/bin/python2.7
 # coding=utf8
-from Tools import *
+from MusicTools import *
 import time
+import HelpTools
 
 start = time.clock()
-# print len(wavToArray(mp3ToWav("./music/diziduzou.mp3")))
-# print len(musicArrayCut(wavToArray(mp3ToWav("./music/diziduzou.mp3"))))
-# a = (getAllBasicHz(musicArrayCut(wavToArray(mp3ToWav("./music/diziduzou.mp3")))))
-b = (musicArrayCut(wavToArray("./test.wav")))
-a = getAllBasicHz(b)
-print len(a)
-print a
-print BasicHzToMusicName(a)
-print len(BasicHzToMusicName(a))
-end = time.clock()
 
+MusicData = HelpTools.read_music_info_from_disk(
+    data_location="./music/music_info/茉莉花100.txt")
+print basic_hz_to_music_name(MusicData)
+print len(basic_hz_to_music_name(MusicData))
+
+end = time.clock()
 print "time", end - start
