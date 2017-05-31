@@ -5,6 +5,8 @@ import os
 import wave
 import numpy as np
 import ctypes
+import HelpTools
+import Yaafe
 
 # 当wav文件的采样频率为44100时，每分钟100拍的音乐，16分音符的采样步长为6654
 N = 6654
@@ -93,33 +95,46 @@ def get_all_basic_hz_with_open_cv():
 
 
 # 基频到音名的映射
-def basic_hz_to_music_name(all_basic_hz):
-    music_name = ['c', '#c', 'd', '#d', 'e', 'f', '#f', 'g', '#g',
-                  'a', '#a', 'b', 'c1', '#c1', 'd1', '#d1', 'e1', 'f1',
-                  '#f1', 'g1', '#g1', 'a1', '#a1', 'b1', 'c2', '#c2', 'd2',
-                  '#d2', 'e2', 'f2', '#f2', 'g2', '#g2', 'a2', '#a2', 'b2']
-    music_hz = [130.8, 138.6, 146.8, 155.6, 164.8, 174.6, 185.0, 196.0, 207.1,
-                220.0, 233.1, 246.9, 261.6, 277.2, 293.7, 311.1, 329.6, 349.2,
-                370.0, 392.0, 415.3, 440.0, 466.2, 493.9, 523.3, 554.4, 587.3,
-                622.3, 659.3, 698.5, 740.0, 784.0, 830.6, 880.0, 932.3, 987.8]
-
+def basic_hz_to_pitch_names(all_basic_hz):
+    pitch_name, music_hz = HelpTools.return_pitch_names_array_and_hz_array()
     result = []
     for i in all_basic_hz:
-        if i + 5 < 130.8:
-            result.append(music_name[0])
-        elif i - 5 > 987.8:
-            result.append(music_name[35])
-        else:
-            # for j in range(0, 36):
-            #     if i - 5.0 <= musicHz[j] < i + 5.0:
-            #         result.append(musicName[j])
-            #         break
-            num = 10000
-            no = 0
-            for j in range(0, 36):
-                if num > abs(music_hz[j] - i):
-                    num = abs(music_hz[j] - i)
-                    no = j
-            result.append(music_name[no])
+        # if i + 5.0 < 130.8:
+        #     result.append(pitch_name[0])
+        # elif i - 5.0 > 987.8:
+        #     result.append(pitch_name[35])
+        # else:
+        # for j in range(0, 36):
+        #     if i - 5.0 <= musicHz[j] < i + 5.0:
+        #         result.append(musicName[j])
+        #         break
+        num = 10000
+        no = 0
+        for j in range(0, len(music_hz)):
+            if num > abs(music_hz[j] - i):
+                num = abs(music_hz[j] - i)
+                no = j
+        result.append(pitch_name[no])
 
     return result
+
+
+# 获得切片后的数组每组的能量
+def get_every_energy(frames):
+    all_energy = []
+    for frame in frames:
+        energy = 0
+        for i in frame:
+            energy += abs(i)
+        all_energy.append(energy)
+    return all_energy
+
+
+# 由能量对
+
+
+# 获得相应的特征值
+def getFeather(musicPath, musicInfo):
+    Yaafe.init()
+    Yaafe.startEngine(musicPath)
+    return Yaafe.getFeature(musicInfo)
