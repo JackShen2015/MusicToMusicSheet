@@ -200,7 +200,7 @@ class Windows(QMainWindow, ui.Ui_MainWindow):
             result_str += "\n" + "\n"
             result_str += u"拍号：" + MusicTools.get_beat(frames=after[0:6])
             result_str += "\n"
-            result_str += u"调号：" + MusicTools.get_diao_hao()
+            # result_str += u"调号：" + MusicTools.get_diao_hao()
             self.after_music_info.setText(result_str)
 
             str1 = MusicTools.get_final_music()
