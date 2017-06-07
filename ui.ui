@@ -6,52 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>699</width>
-    <height>502</height>
+    <width>961</width>
+    <height>649</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>699</width>
-    <height>502</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>699</width>
-    <height>502</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>民族音乐信息提取系统</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>681</width>
-      <height>441</height>
+      <width>961</width>
+      <height>600</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="sheet">
      <attribute name="title">
       <string>乐谱</string>
      </attribute>
-     <widget class="QTextBrowser" name="music_info">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>161</y>
-        <width>661</width>
-        <height>231</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="music_location_in_sheet">
       <property name="geometry">
        <rect>
@@ -91,8 +72,8 @@
      <widget class="QPushButton" name="startButtonInSheet">
       <property name="geometry">
        <rect>
-        <x>540</x>
-        <y>70</y>
+        <x>670</x>
+        <y>20</y>
         <width>98</width>
         <height>27</height>
        </rect>
@@ -104,14 +85,147 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>120</y>
-        <width>91</width>
+        <x>20</x>
+        <y>70</y>
+        <width>891</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>提取信息展示</string>
+       <string>提取中间信息展示： ----------------------------------------------------------------------------------------------------------------------------------------------</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="after_music_info">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>380</y>
+        <width>401</width>
+        <height>161</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>340</y>
+        <width>951</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>最后结果展示： --------------------------------------------------------------------------------------------------------------------------------------------------</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear_result_A">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>20</y>
+        <width>98</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>清除结果</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="after_music_info_2">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>380</y>
+        <width>401</width>
+        <height>161</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInSheet_frames">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>300</y>
+        <width>161</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示音乐波形图大图</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInSheet_datu2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>300</y>
+        <width>121</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示频率大图</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInSheet_datu3">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>300</y>
+        <width>111</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示能量大图</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="frames">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>120</y>
+        <width>241</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hz">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>120</y>
+        <width>241</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="energy_in_sheet">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>120</y>
+        <width>241</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
@@ -155,56 +269,11 @@
        <string>音乐文件路径</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="featureComboBox">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>90</y>
-        <width>121</width>
-        <height>27</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>MFCC</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>MFCC_D1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Sharpness</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>ZCR</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Energy</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>SpectralRolloff</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>spectralFlatness</string>
-       </property>
-      </item>
-     </widget>
      <widget class="QPushButton" name="startButtonInMusicInfo">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>90</y>
+        <x>670</x>
+        <y>40</y>
         <width>98</width>
         <height>27</height>
        </rect>
@@ -213,17 +282,245 @@
        <string>开始提取</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QPushButton" name="startButtonInMusicInfo_mfcc">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>90</y>
-        <width>91</width>
-        <height>31</height>
+        <x>60</x>
+        <y>260</y>
+        <width>131</width>
+        <height>27</height>
        </rect>
       </property>
       <property name="text">
-       <string>提取信息</string>
+       <string>显示MFCC大图</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInMusicInfo_lpc">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>260</y>
+        <width>121</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示LPC大图</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInMusicInfo_mfcc_d1">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>260</y>
+        <width>141</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示MFCC_D1大图</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInMusicInfo_sharpness">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>260</y>
+        <width>141</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示sharpness大图</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInMusicInfo_zcr">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>480</y>
+        <width>151</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示zcr大图</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInMusicInfo_energy">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>480</y>
+        <width>141</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示energy大图</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInMusicInfo_spectralrolloff">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>480</y>
+        <width>161</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示spectralrolloff大图</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButtonInMusicInfo_spectralflatness">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>480</y>
+        <width>181</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>显示spectralflatness大图</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="mfcc">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>130</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lpc">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>130</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="mfcc_d1">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>130</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="sharpness">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>130</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="zcr">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>350</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="energy">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>350</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="spectralrolloff">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>350</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="spectralflatness">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>350</y>
+        <width>191</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
@@ -234,7 +531,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>699</width>
+     <width>961</width>
      <height>26</height>
     </rect>
    </property>

@@ -130,7 +130,19 @@ def get_every_energy(frames):
     return all_energy
 
 
-# 由能量对
+# 返回调号
+def get_diao_hao():
+    return "c"
+
+
+def get_final_music():
+    string1 = " result:\n" \
+              "c=4/4\n" \
+              "               .  .  |\n" \
+              ".  .  .  .  .  .  .  | .  .  .  .\n" \
+              "3 3 5 6 1 1 6  | 5 5 6 5 -\n" \
+              "   ___ ___ ___ |  ___ "
+    return string1
 
 
 # 获得相应的特征值
@@ -138,3 +150,57 @@ def getFeather(musicPath, musicInfo):
     Yaafe.init()
     Yaafe.startEngine(musicPath)
     return Yaafe.getFeature(musicInfo)
+
+
+def pitch_array(pitch_name_array, energy_array):
+    array_pitch = []
+    for i in range(0, len(energy_array)):
+        pitch = Pitch()
+        pitch.name = pitch_name_array[i]
+        pitch.time = 1
+        pitch.energy = energy_array[i]
+        array_pitch.append(pitch)
+    return array_pitch
+
+
+def after_pitch_array(pitch_array):
+    after_pitch_array = []
+    pitch_name_temp = ""
+    pitch_energy_temp = 0
+    for pitch in pitch_array:
+        if pitch.energy > pitch_energy_temp or pitch.name != pitch_name_temp:
+            after_pitch_array.append(pitch)
+            pitch_name_temp = pitch.name
+            pitch_energy_temp = pitch.energy
+        elif (pitch.name == pitch_name_temp and pitch.energy < pitch_energy_temp):
+            after_pitch_array[-1].time += 1
+            after_pitch_array[-1].energy += pitch.energy
+            pitch_energy_temp = pitch.energy
+    return after_pitch_array
+
+
+def get_beat(frames):
+    enerys = []
+    for i in frames:
+        enerys.append(i.energy)
+    max_location = enerys.index(max(enerys))
+    min_location = enerys.index(min(enerys))
+    max1_loaction = get_max1(enerys)
+
+    if (max_location == 5):
+        return "4/4"
+
+    print max_location
+    print min_location
+
+    return "4/4"
+
+
+def get_max1(frames):
+    return 0
+
+
+class Pitch:
+    name = ""
+    time = 0
+    energy = 0
